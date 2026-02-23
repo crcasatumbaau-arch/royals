@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Royals Checkout</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    background-image: url("bg3.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+header {
+    background: #a9792c;
+    padding: 25px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    border: 4px solid #000000;
+    padding: 30px;
+    background: #feebb7c9;
+    border-radius: 15px;
+}
+
+/* LOGO */
+.container img {
+    width: 80px;
+    height: 80px;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+.container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ITEMS */
+.items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* ITEM IMAGE */
+.item img {
+    width: 100%;
+    max-width: 120px;
+    height: fixed;
+    border-radius: 15px;
+}
+
+/* TOTAL BOX */
+.total-box {
+    margin: 20px auto;
+    background: #e36d6d;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* BUTTONS */
+.button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.return-btn {
+    background: #d2b57a;
+}
+
+.confirm-btn {
+    background: red;
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    .items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .total-box {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    header {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .container h3 {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Welcome to Sweet Royals Online Shop. Where you order we deliver with care.
+</header>
+
+<div class="container">
+
+<img src="logo_and_product/logo.png" alt="Logo">
+
+<h3>
+Are you sure this is the food and amount you want?<br>
+If yes, please press Checkout; otherwise, click Return.
+</h3>
+
+<div class="items">
+<!-- Items will appear here -->
+</div>
+
+<div class="total-box">
+Total Amount: ₱<span id="total">0</span>
+</div>
+
+<div style="text-align:center;">
+<button class="button return-btn" onclick="goBack()">Return</button>
+<button class="button confirm-btn" onclick="confirmOrder()">Confirm</button>
+</div>
+
+</div>
+
+<script src="api-client.js"></script>
+<script src="checkout.js"></script>
+
+</body>
+</html>

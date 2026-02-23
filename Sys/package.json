@@ -1,0 +1,11 @@
+{
+  "name": "sweet-royals-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "mongodb": "^6.15.0"
+  }
+}
