@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a6782e">
+  <title>Sweet Royals | Admin Orders</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="sr-header">
+      <div class="sr-header-inner">
+        <a class="sr-brand" href="products.html">
+          <span class="sr-brand-mark">
+            <img src="../logo_and_product/logo.png" alt="Sweet Royals logo">
+          </span>
+          <span class="sr-brand-copy">
+            <strong>Sweet Royals</strong>
+            <span class="admin-header-note">Admin order panel</span>
+          </span>
+        </a>
+
+        <nav class="sr-nav is-open admin-nav">
+          <a class="sr-nav-btn" href="products.html">Products</a>
+          <a class="sr-nav-btn" href="order-history.html">Orders</a>
+          <a class="sr-nav-btn" href="../menu.html?adminPreview=1">Customer View</a>
+        </nav>
+
+        <div class="sr-header-actions">
+          <button class="sr-nav-btn logout" type="button">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-page">
+      <div class="sr-container admin-layout">
+        <section class="sr-card admin-hero">
+          <span class="sr-badge">Order Management</span>
+          <h1 class="sr-heading-lg" style="margin-top: 1rem;">Order History auto tracking.</h1>
+          <p class="sr-subtitle">Confirm or cancel customer orders here and keep track of who ordered what.</p>
+          <div class="admin-kpis">
+            <div class="admin-kpi">
+              <strong id="adminOrderCount">0</strong>
+              <span class="sr-text-muted">Total orders</span>
+            </div>
+            <div class="admin-kpi">
+              <strong id="adminPendingCount">0</strong>
+              <span class="sr-text-muted">Pending orders</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="sr-panel admin-orders">
+          <div class="sr-inline-between">
+            <div>
+              <h2 class="sr-heading-md">Order History</h2>
+              <p class="sr-text-muted">This list uses the real backend orders collection, not only browser storage.</p>
+            </div>
+          </div>
+          <div class="orders-list" id="orders-list"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="../api-client.js"></script>
+  <script src="../security-utils.js"></script>
+  <script src="../notification-manager.js"></script>
+  <script src="../theme-manager.js"></script>
+  <script src="auth.js"></script>
+  <script src="order-history.js"></script>
+</body>
+</html>

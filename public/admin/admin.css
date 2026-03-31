@@ -1,0 +1,370 @@
+.admin-shell {
+  min-height: 100vh;
+}
+
+.admin-page {
+  padding: 1.5rem 0 3rem;
+}
+
+.admin-header-note {
+  display: block;
+  font-size: 0.82rem;
+  opacity: 0.9;
+}
+
+.admin-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.admin-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.admin-hero {
+  padding: 1.4rem;
+}
+
+.admin-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.admin-kpi {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 250, 242, 0.76);
+  border: 1px solid var(--sr-border);
+}
+
+body.dark-mode .admin-kpi {
+  background: rgba(45, 31, 16, 0.72);
+}
+
+.admin-kpi strong {
+  display: block;
+  font-size: 1.35rem;
+  margin-bottom: 0.2rem;
+}
+
+.admin-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+}
+
+.admin-form,
+.admin-list,
+.admin-orders,
+.admin-insights {
+  padding: 1.2rem;
+}
+
+.admin-insights-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 1rem;
+}
+
+.admin-insight-card {
+  border: 1px solid var(--sr-border);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  background: rgba(255, 250, 242, 0.76);
+  box-shadow: var(--sr-shadow);
+}
+
+body.dark-mode .admin-insight-card {
+  background: rgba(45, 31, 16, 0.72);
+}
+
+.admin-insight-title {
+  margin: 0 0 0.35rem;
+}
+
+.admin-user-list,
+.admin-request-list,
+.admin-stat-stack {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.admin-user-card,
+.admin-request-card,
+.admin-stat-box {
+  border: 1px solid var(--sr-border);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 247, 235, 0.74);
+}
+
+body.dark-mode .admin-user-card,
+body.dark-mode .admin-request-card,
+body.dark-mode .admin-stat-box {
+  background: rgba(58, 40, 23, 0.68);
+}
+
+.admin-stat-box strong,
+.admin-user-card strong,
+.admin-request-card strong {
+  display: block;
+}
+
+.admin-stat-box h4 {
+  margin: 0.35rem 0;
+  font-size: 1.05rem;
+}
+
+.admin-upload {
+  position: relative;
+}
+
+.admin-upload input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.admin-upload-box {
+  min-height: 240px;
+  border: 2px dashed rgba(166, 120, 46, 0.34);
+  border-radius: 1.2rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 250, 242, 0.96), rgba(254, 235, 183, 0.52));
+}
+
+body.dark-mode .admin-upload-box {
+  background: linear-gradient(135deg, rgba(45, 31, 16, 0.96), rgba(76, 53, 28, 0.72));
+}
+
+.admin-upload-box img {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+}
+
+.admin-upload-placeholder {
+  padding: 1.25rem;
+}
+
+.admin-form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.admin-field-full {
+  grid-column: 1 / -1;
+}
+
+.admin-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.admin-field label {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.admin-field input,
+.admin-field textarea {
+  width: 100%;
+  border: 1px solid var(--sr-border);
+  border-radius: 1rem;
+  background: var(--sr-input);
+  color: var(--sr-text);
+  padding: 0.9rem 1rem;
+}
+
+.admin-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.products-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.product-card {
+  background: rgba(255, 250, 242, 0.76);
+  border: 1px solid var(--sr-border);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: var(--sr-shadow);
+}
+
+body.dark-mode .product-card {
+  background: rgba(45, 31, 16, 0.72);
+}
+
+.product-card-media {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.product-card-body {
+  padding: 1rem;
+}
+
+.product-card-top,
+.product-meta,
+.order-top,
+.order-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.product-name,
+.order-name {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.product-price {
+  color: var(--sr-red);
+  font-weight: 800;
+}
+
+.product-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(166, 120, 46, 0.14);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.product-quantity,
+.product-description,
+.order-meta,
+.order-items {
+  color: var(--sr-text-muted);
+}
+
+.product-actions,
+.order-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 0.95rem;
+}
+
+.mini-button,
+.decision-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.72rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mini-button.update,
+.decision-button.confirm {
+  background: var(--sr-gold);
+  color: #fff7eb;
+}
+
+.mini-button.remove,
+.decision-button.cancel {
+  background: var(--sr-red);
+  color: #fff4ef;
+}
+
+.empty-products,
+.empty-orders {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--sr-text-muted);
+  border: 1px dashed var(--sr-border);
+  border-radius: 1rem;
+}
+
+.orders-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.orders-row {
+  background: rgba(255, 250, 242, 0.76);
+  border: 1px solid var(--sr-border);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  box-shadow: var(--sr-shadow);
+}
+
+body.dark-mode .orders-row {
+  background: rgba(45, 31, 16, 0.72);
+}
+
+.orders-head {
+  display: none;
+}
+
+.customer-cell,
+.order-details {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.status-badge.completed {
+  background: var(--sr-green-soft);
+  color: var(--sr-green);
+}
+
+.status-badge.cancelled {
+  background: #f2beb8;
+  color: var(--sr-red-deep);
+}
+
+.status-badge.pending {
+  background: var(--sr-amber-soft);
+  color: #744100;
+}
+
+@media (max-width: 960px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

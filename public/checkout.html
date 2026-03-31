@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Review your Sweet Royals cart and confirm your order securely.">
+  <meta name="theme-color" content="#a6782e">
+  <title>Sweet Royals | Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sr-shell">
+    <header class="sr-header">
+      <div class="sr-header-inner">
+        <a class="sr-brand" href="menu.html">
+          <span class="sr-brand-mark">
+            <img src="logo_and_product/logo.png" alt="Sweet Royals logo">
+          </span>
+          <span class="sr-brand-copy">
+            <strong>Sweet Royals</strong>
+            <span>Checkout</span>
+          </span>
+        </a>
+
+        <nav class="sr-nav is-open">
+          <button class="sr-nav-btn" id="backToMenuBtn" type="button">Return to Menu</button>
+          <button class="sr-nav-btn contact-btn" type="button">Contact</button>
+        </nav>
+
+        <div class="sr-header-actions"></div>
+      </div>
+    </header>
+
+    <main class="sr-page">
+      <div class="sr-container sr-grid">
+        <section class="sr-card sr-hero-card">
+          <span class="sr-badge">Secure Review</span>
+          <h1 class="sr-heading-lg" style="margin-top: 1rem;">Double-check your items before we confirm the order.</h1>
+          <p class="sr-subtitle">
+            Your order request will update your account history and trigger a delivery-ready notification.
+          </p>
+        </section>
+
+        <section class="sr-checkout-layout">
+          <section class="sr-panel">
+            <div class="sr-inline-between">
+              <div>
+                <h2 class="sr-heading-md">Cart Items</h2>
+                <p class="sr-text-muted">Everything below comes from your menu selections.</p>
+              </div>
+            </div>
+            <div class="sr-cart-items" id="checkoutItems"></div>
+          </section>
+
+          <aside class="sr-panel">
+            <h2 class="sr-heading-md">Order Summary</h2>
+            <div class="sr-summary-list" id="orderSummary"></div>
+            <div class="sr-summary-total" style="margin-top: 1rem;">
+              <span>Total</span>
+              <span id="totalAmount">PHP 0.00</span>
+            </div>
+            <div class="sr-summary-card" style="margin-top: 1rem;">
+              <strong>Need a custom order?</strong>
+              <p class="sr-text-muted">Contact the admin for customized cakes, party trays, or special bakery requests.</p>
+              <button class="sr-btn sr-btn-secondary" id="customOrderBtn" type="button">Contact Admin for Custom Orders</button>
+            </div>
+            <div class="sr-field" style="margin-top: 1rem;">
+              <label for="specialRequest">Special Request</label>
+              <textarea id="specialRequest" maxlength="300" placeholder="Example: Less sweet, add dedication note, or delivery instructions."></textarea>
+            </div>
+            <div class="sr-grid" style="margin-top: 1.25rem;">
+              <button class="sr-btn sr-btn-secondary" id="checkoutBackBtn" type="button">Return</button>
+              <button class="sr-btn" id="confirmOrderBtn" type="button">Confirm Order</button>
+            </div>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="api-client.js"></script>
+  <script src="security-utils.js"></script>
+  <script src="notification-manager.js"></script>
+  <script src="theme-manager.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

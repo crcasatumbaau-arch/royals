@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the Sweet Royals menu, manage your cart, orders, feedback, and profile.">
+  <meta name="theme-color" content="#a6782e">
+  <title>Sweet Royals | Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sr-shell">
+    <header class="sr-header">
+      <div class="sr-header-inner">
+        <a class="sr-brand" href="menu.html">
+          <span class="sr-brand-mark">
+            <img src="logo_and_product/logo.png" alt="Sweet Royals logo">
+          </span>
+          <span class="sr-brand-copy">
+            <strong>Sweet Royals</strong>
+            <span>Bakery ordering dashboard</span>
+          </span>
+        </a>
+
+        <nav class="sr-nav" id="primaryNav">
+          <button class="sr-nav-btn contact-btn" type="button">Contact</button>
+          <button class="sr-nav-btn" id="profileBtn" type="button">Profile</button>
+          <button class="sr-nav-btn" id="notificationBtn" type="button">Notify Me</button>
+          <button class="sr-nav-btn checkout-btn" type="button">Checkout</button>
+          <button class="sr-nav-btn is-danger logout-btn" type="button">Log Out</button>
+        </nav>
+
+        <div class="sr-header-actions">
+          <button class="sr-icon-btn" id="headerNotificationBtn" type="button" aria-label="Enable browser notifications">!</button>
+        </div>
+
+        <button class="sr-icon-btn sr-mobile-toggle" id="mobileNavToggle" type="button" aria-label="Toggle navigation">=</button>
+      </div>
+    </header>
+
+    <main class="sr-page">
+      <div class="sr-container sr-grid">
+        <div class="sr-preview-bar sr-hidden" id="adminPreviewBar">
+          <button class="sr-btn sr-btn-secondary" id="backToAdminBtn" type="button">Back to Admin Panel</button>
+        </div>
+
+        <section class="sr-card sr-hero-card">
+          <span class="sr-badge">App-Matched Interface</span>
+          <div class="sr-grid sr-two-col" style="margin-top: 1rem;">
+            <div>
+              <h1 class="sr-heading-lg">Fresh bakes, faster checkout, and a cleaner experience on every screen.</h1>
+              <p class="sr-subtitle" id="welcomeCopy">
+                Loading your account details and delivery-ready menu.
+              </p>
+            </div>
+            <div class="sr-kpis">
+              <div class="sr-kpi">
+                <strong id="kpiProducts">0</strong>
+                <span class="sr-text-muted">Products</span>
+              </div>
+              <div class="sr-kpi">
+                <strong id="kpiCart">0</strong>
+                <span class="sr-text-muted">In cart</span>
+              </div>
+              <div class="sr-kpi">
+                <strong id="kpiOrders">0</strong>
+                <span class="sr-text-muted">Recent orders</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sr-grid sr-two-col" style="align-items: start;">
+          <section class="sr-panel">
+            <div class="sr-inline-between">
+              <div>
+                <h2 class="sr-heading-md">Menu</h2>
+                <p class="sr-text-muted">Search by product name or filter by category.</p>
+              </div>
+              <span class="sr-badge" id="menuStatusBadge">Live catalog</span>
+            </div>
+
+            <div class="sr-toolbar">
+              <label class="sr-search">
+                <span class="sr-search-icon">Search</span>
+                <input id="menuSearch" type="search" placeholder="Search cookies, cakes, pudding...">
+              </label>
+              <div class="sr-panel" style="padding: 0.85rem;">
+                <div class="sr-chip-list" id="categoryFilters"></div>
+              </div>
+            </div>
+
+            <div class="sr-products" id="menuGrid"></div>
+          </section>
+
+          <aside class="sr-grid">
+            <section class="sr-panel">
+              <div class="sr-inline-between">
+                <div>
+                  <h2 class="sr-heading-md">My Orders</h2>
+                  <p class="sr-text-muted">Pending and confirmed updates stay here.</p>
+                </div>
+              </div>
+              <div class="sr-order-list" id="customerOrders"></div>
+            </section>
+
+            <section class="sr-panel">
+              <div class="sr-inline-between">
+                <div>
+                  <h2 class="sr-heading-md">Customer Feedback</h2>
+                  <p class="sr-text-muted">
+                    Tap below to share how satisfied you were with the food.
+                  </p>
+                </div>
+                <button class="sr-btn" id="menuFeedbackBtn" type="button">Leave Feedback</button>
+              </div>
+              <div class="sr-feedback-grid" id="feedbackPreview"></div>
+            </section>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="sr-modal-overlay sr-hidden" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+    <div class="sr-modal">
+      <div class="sr-inline-between" style="margin-bottom: 1rem;">
+        <h2 class="sr-heading-md" id="profileTitle">Edit Profile</h2>
+        <button class="sr-icon-btn" id="closeProfileModal" type="button" aria-label="Close profile dialog">x</button>
+      </div>
+
+      <div class="sr-error-banner" id="profileError" role="alert"></div>
+
+      <form id="profileForm" novalidate>
+        <div class="sr-field">
+          <label for="profileName">Full Name</label>
+          <input id="profileName" type="text" required>
+        </div>
+        <div class="sr-field">
+          <label for="profileEmail">Email</label>
+          <input id="profileEmail" type="email" required>
+        </div>
+        <div class="sr-field">
+          <label for="profilePhone">Phone Number</label>
+          <input id="profilePhone" type="tel">
+        </div>
+        <div class="sr-field">
+          <label for="profileLocation">Delivery Address</label>
+          <textarea id="profileLocation" required></textarea>
+        </div>
+        <div class="sr-inline-between">
+          <button class="sr-btn sr-btn-secondary" id="cancelProfileBtn" type="button">Cancel</button>
+          <button class="sr-btn" id="saveProfileBtn" type="submit">Save Profile</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="api-client.js"></script>
+  <script src="security-utils.js"></script>
+  <script src="notification-manager.js"></script>
+  <script src="theme-manager.js"></script>
+  <script src="feedback-manager.js"></script>
+  <script src="menu.js"></script>
+</body>
+</html>

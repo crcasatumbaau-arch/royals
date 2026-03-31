@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a Sweet Royals account for bakery ordering and delivery updates.">
+  <meta name="theme-color" content="#a6782e">
+  <title>Sweet Royals | Register</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="sr-auth-layout">
+    <section class="sr-auth-stage">
+      <div class="sr-auth-copy">
+        <span class="sr-badge">Fresh Account Setup</span>
+        <h1 class="sr-heading-xl">Create your bakery account in one quick step.</h1>
+        <p>
+          Your profile powers checkout, delivery contact details, saved locations,
+          saved preferences, and customer notifications.
+        </p>
+      </div>
+
+      <section class="sr-form-shell" aria-labelledby="registerHeading">
+        <div class="sr-form-header">
+          <div class="sr-brand-mark">
+            <img src="logo_and_product/logo.png" alt="Sweet Royals logo">
+          </div>
+          <h2 class="sr-heading-md" id="registerHeading">Join Sweet Royals</h2>
+          <p class="sr-text-muted">Use your real delivery details so checkout is faster later.</p>
+        </div>
+
+        <div class="sr-error-banner" id="registerError" role="alert"></div>
+        <div class="sr-success-banner" id="registerSuccess" role="status"></div>
+
+        <form id="registerForm" novalidate>
+          <div class="sr-field">
+            <label for="regName">Name</label>
+            <input id="regName" name="name" type="text" autocomplete="name" placeholder="Juan Dela Cruz" required>
+          </div>
+
+          <div class="sr-field">
+            <label for="regEmail">Email</label>
+            <input id="regEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="sr-inline-between" style="align-items: end; gap: 0.75rem; margin-bottom: 1rem;">
+            <div class="sr-field" style="margin-bottom: 0; flex: 1;">
+              <label for="regEmailCode">Email Verification Code</label>
+              <input
+                id="regEmailCode"
+                name="emailVerificationCode"
+                type="text"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                placeholder="6-digit code"
+                maxlength="6"
+                required
+              >
+            </div>
+            <button class="sr-btn sr-btn-secondary" id="sendEmailCodeBtn" type="button">Send Code</button>
+          </div>
+
+          <p class="sr-helper" style="margin-top: -0.5rem; margin-bottom: 1rem;">
+            We’ll send a verification code to confirm that the mailbox really belongs to you.
+          </p>
+
+          <div class="sr-field">
+            <label for="regPhone">Phone Number</label>
+            <input id="regPhone" name="phone" type="tel" autocomplete="tel" placeholder="09xxxxxxxxx">
+          </div>
+
+          <div class="sr-field">
+            <label for="regPassword">Password</label>
+            <input id="regPassword" name="password" type="password" autocomplete="new-password" required>
+          </div>
+
+          <div class="sr-inline" style="margin-bottom: 1rem;">
+            <input id="showRegisterPassword" type="checkbox">
+            <label for="showRegisterPassword" class="sr-helper" style="margin: 0;">Show password</label>
+          </div>
+
+          <div class="sr-field">
+            <label for="regAddress">Delivery Address</label>
+            <textarea id="regAddress" name="address" autocomplete="street-address" required></textarea>
+          </div>
+
+          <div class="sr-inline-between">
+            <button class="sr-btn sr-btn-secondary" id="returnBtn" type="button">Return</button>
+            <button class="sr-btn" id="registerBtn" type="submit">
+              <span id="registerBtnText">Create Account</span>
+              <span class="loading sr-hidden" id="registerLoader" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+
+        <p class="sr-helper" style="margin-top: 1rem;">
+          Already registered? <a href="index.html">Go back to login</a>.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <script src="api-client.js"></script>
+  <script src="security-utils.js"></script>
+  <script src="notification-manager.js"></script>
+  <script src="theme-manager.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

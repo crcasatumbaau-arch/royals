@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sweet Royals secure sign in for bakery ordering, checkout, and delivery updates.">
+  <meta name="theme-color" content="#a6782e">
+  <title>Sweet Royals | Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="sr-auth-layout">
+    <section class="sr-auth-stage">
+      <div class="sr-auth-copy">
+        <span class="sr-badge">Sweet Royals Bakery</span>
+        <h1 class="sr-heading-xl">Fresh orders, sweet favorites, and a warmer welcome every time you sign in.</h1>
+        <p>
+          Discover your favorite treats, place orders with less hassle, and stay connected
+          with Sweet Royals from any device.
+        </p>
+      </div>
+
+      <section class="sr-form-shell" aria-labelledby="loginHeading">
+        <div class="sr-form-header">
+          <div class="sr-brand-mark">
+            <img src="logo_and_product/logo.png" alt="Sweet Royals logo">
+          </div>
+          <h2 class="sr-heading-md" id="loginHeading">Welcome back</h2>
+          <p class="sr-text-muted">Sign in with your username or email address.</p>
+        </div>
+
+        <div class="sr-error-banner" id="loginError" role="alert"></div>
+        <div class="sr-success-banner" id="loginSuccess" role="status"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="sr-field">
+            <label for="identifier">Username or Email</label>
+            <input id="identifier" name="identifier" type="text" autocomplete="username" placeholder="you@example.com" required>
+          </div>
+
+          <div class="sr-field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+          </div>
+
+          <div class="sr-field sr-hidden" id="verificationCodeField">
+            <label for="verificationCode">Verification Code</label>
+            <input id="verificationCode" name="verificationCode" type="text" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code">
+            <p class="sr-helper" id="verificationHint">We will email a 6-digit code after you enter your password.</p>
+          </div>
+
+          <div class="sr-inline-between">
+            <label class="sr-inline" for="showPassword">
+              <input id="showPassword" type="checkbox">
+              <span class="sr-helper">Show password</span>
+            </label>
+
+            <div class="sr-inline">
+              <button class="sr-icon-btn" id="enableNotificationsBtn" type="button" aria-label="Enable browser notifications">!</button>
+            </div>
+          </div>
+
+          <button class="sr-btn" id="loginBtn" type="submit" style="width: 100%; margin-top: 1rem;">
+            <span id="loginBtnText">Sign In</span>
+            <span class="loading sr-hidden" id="loginLoader" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <div class="sr-inline-between" style="margin-top: 1rem;">
+          <a href="register.html">Create account</a>
+          <button class="sr-btn sr-btn-secondary" id="forgotPasswordToggle" type="button">Forgot Password?</button>
+        </div>
+
+        <section class="sr-panel sr-hidden" id="forgotPasswordPanel" style="margin-top: 1rem; padding: 1rem;">
+          <h3 class="sr-heading-md">Reset Password</h3>
+          <p class="sr-text-muted">Request a code, then use it to set a new password.</p>
+
+          <form id="forgotPasswordForm" novalidate>
+            <div class="sr-field">
+              <label for="forgotEmail">Email</label>
+              <input id="forgotEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="sr-field">
+              <label for="forgotCode">Verification Code</label>
+              <input id="forgotCode" type="text" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit code">
+            </div>
+            <div class="sr-field">
+              <label for="forgotNewPassword">New Password</label>
+              <input id="forgotNewPassword" type="password" autocomplete="new-password" placeholder="Create a new password" required>
+            </div>
+            <div class="sr-inline-between">
+              <button class="sr-btn sr-btn-secondary" id="requestResetCodeBtn" type="button">Send Code</button>
+              <button class="sr-btn" id="resetPasswordBtn" type="submit">Reset Password</button>
+            </div>
+          </form>
+        </section>
+
+        <p class="sr-helper" style="margin-top: 1rem;">
+          Secure checkout, profile protection, and responsive access are enabled across the app.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <script src="api-client.js"></script>
+  <script src="security-utils.js"></script>
+  <script src="notification-manager.js"></script>
+  <script src="theme-manager.js"></script>
+  <script src="feedback-manager.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

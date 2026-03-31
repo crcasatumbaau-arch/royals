@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sweet Royals contact details, location, and customer feedback.">
+  <meta name="theme-color" content="#a6782e">
+  <title>Sweet Royals | Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sr-shell">
+    <header class="sr-header">
+      <div class="sr-header-inner">
+        <a class="sr-brand" href="menu.html">
+          <span class="sr-brand-mark">
+            <img src="logo_and_product/logo.png" alt="Sweet Royals logo">
+          </span>
+          <span class="sr-brand-copy">
+            <strong>Sweet Royals</strong>
+            <span>Contact and location</span>
+          </span>
+        </a>
+
+        <nav class="sr-nav is-open">
+          <button class="sr-nav-btn" id="menuBtn" type="button">Menu</button>
+          <button class="sr-nav-btn" id="checkoutBtn" type="button">Checkout</button>
+          <button class="sr-nav-btn" id="loginBtn" type="button">Login</button>
+        </nav>
+
+        <div class="sr-header-actions"></div>
+      </div>
+    </header>
+
+    <main class="sr-page">
+      <div class="sr-container sr-grid">
+        <section class="sr-card sr-hero-card">
+          <span class="sr-badge">Support + Delivery</span>
+          <h1 class="sr-heading-lg" style="margin-top: 1rem;">Reach the bakery, confirm the location, and leave feedback anytime.</h1>
+        </section>
+
+        <section class="sr-contact-layout">
+          <div class="sr-grid">
+            <section class="sr-panel">
+              <h2 class="sr-heading-md">Find Us</h2>
+              <p class="sr-text-muted">Aglipay Street, Poblacion Sur, Rizal, Nueva Ecija.</p>
+              <iframe
+                class="sr-map-frame"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Alipay+Street,+Poblacion+Sur,+Rizal,+Nueva+Ecija&output=embed">
+              </iframe>
+            </section>
+          </div>
+
+          <div class="sr-grid">
+            <section class="sr-panel">
+              <h2 class="sr-heading-md">Store Details</h2>
+              <div class="sr-contact-cards">
+                <article class="sr-contact-card">
+                  <strong>Phone</strong>
+                  <p class="sr-text-muted">093* *** **80</p>
+                </article>
+                <article class="sr-contact-card">
+                  <strong>Email</strong>
+                  <p class="sr-text-muted">pathgalope@gmail.com</p>
+                </article>
+                <article class="sr-contact-card">
+                  <strong>Hours</strong>
+                  <p class="sr-text-muted">Mon-Fri 7:00 AM - 5:00 PM, Sat 7:00 AM - 6:00 PM</p>
+                </article>
+                <article class="sr-contact-card">
+                  <strong>Delivery Promise</strong>
+                  <p class="sr-text-muted">Fresh baked goods packed with care for nearby delivery.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="sr-panel">
+              <div class="sr-inline-between">
+                <div>
+                  <h2 class="sr-heading-md">Customer Feedback</h2>
+                  <p class="sr-text-muted">Recent food satisfaction feedback from customers.</p>
+                </div>
+                <button class="sr-btn" id="openFeedbackBtn" type="button">Leave Feedback</button>
+              </div>
+              <div class="sr-feedback-grid" id="feedbackShowcase" style="margin-top: 1rem;"></div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="api-client.js"></script>
+  <script src="security-utils.js"></script>
+  <script src="notification-manager.js"></script>
+  <script src="theme-manager.js"></script>
+  <script src="feedback-manager.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>

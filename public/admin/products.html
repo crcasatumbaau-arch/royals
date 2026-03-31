@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a6782e">
+  <title>Sweet Royals | Admin Products</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="sr-header">
+      <div class="sr-header-inner">
+        <a class="sr-brand" href="products.html">
+          <span class="sr-brand-mark">
+            <img src="../logo_and_product/logo.png" alt="Sweet Royals logo">
+          </span>
+          <span class="sr-brand-copy">
+            <strong>Sweet Royals</strong>
+            <span class="admin-header-note">Admin products panel</span>
+          </span>
+        </a>
+
+        <nav class="sr-nav is-open admin-nav">
+          <a class="sr-nav-btn" href="products.html">Products</a>
+          <a class="sr-nav-btn" href="order-history.html">Orders</a>
+          <a class="sr-nav-btn" href="../menu.html?adminPreview=1">Customer View</a>
+        </nav>
+
+        <div class="sr-header-actions">
+          <button class="sr-nav-btn logout" type="button">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-page">
+      <div class="sr-container admin-layout">
+        <section class="sr-card admin-hero">
+          <span class="sr-badge">Admin Workspace</span>
+          <h1 class="sr-heading-lg" style="margin-top: 1rem;">Product and Shop Management.</h1>
+          <p class="sr-subtitle">List of Products and Stocks.</p>
+          <div class="admin-kpis">
+            <div class="admin-kpi">
+              <strong id="adminProductCount">0</strong>
+              <span class="sr-text-muted">Menu items</span>
+            </div>
+            <div class="admin-kpi">
+              <strong id="adminLowStockCount">0</strong>
+              <span class="sr-text-muted">Low stock</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-grid">
+          <section class="sr-panel admin-form">
+            <div class="sr-inline-between">
+              <div>
+                <h2 class="sr-heading-md">Product Form</h2>
+                <p class="sr-text-muted">Add or update menu items here.</p>
+              </div>
+            </div>
+
+            <form id="product-form">
+              <div class="admin-upload hero-upload">
+                <input class="hero-upload-input" id="hero-upload" type="file" accept="image/*" required>
+                <label class="admin-upload-box hero-upload-surface" for="hero-upload">
+                  <img class="hero-preview" id="hero-preview" alt="Food preview">
+                  <span class="admin-upload-placeholder hero-placeholder" id="hero-placeholder">
+                    <span class="hero-plus">+</span>
+                    <strong>Upload food picture</strong>
+                    <span class="sr-text-muted">Tap here to choose an image</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="admin-form-grid">
+                <div class="admin-field">
+                  <label for="food-name">Food name</label>
+                  <input id="food-name" name="name" type="text" placeholder="Example: Leche Flan" required>
+                </div>
+
+                <div class="admin-field">
+                  <label for="food-price">Price (PHP)</label>
+                  <input id="food-price" name="price" type="number" min="0" step="1" placeholder="150" required>
+                </div>
+
+                <div class="admin-field">
+                  <label for="food-category">Category</label>
+                  <select id="food-category" name="category" required>
+                    <option value="">Select category</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Drink">Drink</option>
+                    <option value="Cake">Cake</option>
+                  </select>
+                </div>
+
+                <div class="admin-field">
+                  <label for="food-quantity">Quantity</label>
+                  <input id="food-quantity" name="quantity" type="number" min="0" step="1" value="1" required>
+                </div>
+
+                <div class="admin-field admin-field-full">
+                  <label for="food-description">Description</label>
+                  <textarea id="food-description" name="description" rows="3" placeholder="Short product description"></textarea>
+                </div>
+              </div>
+
+              <div class="admin-actions">
+                <button class="sr-btn submit-button" type="submit">Add Food</button>
+                <button class="sr-btn sr-btn-secondary secondary-button" id="clear-form" type="button">Clear</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="sr-panel admin-list">
+            <div class="sr-inline-between">
+              <div>
+                <h2 class="sr-heading-md">Live Menu Items</h2>
+                <p class="sr-text-muted">These are the same products shown to customers.</p>
+              </div>
+            </div>
+            <div class="products-list" id="products-list"></div>
+          </section>
+        </section>
+
+        <section class="sr-panel admin-insights">
+          <div class="sr-inline-between">
+            <div>
+              <h2 class="sr-heading-md">Shop Insights</h2>
+              <p class="sr-text-muted">Track registered users, buying trends, and special customer requests.</p>
+            </div>
+          </div>
+
+          <div class="admin-insights-grid">
+            <section class="admin-insight-card">
+              <h3 class="admin-insight-title">Registered Users</h3>
+              <p class="sr-text-muted" id="registeredUsersCount">0 accounts</p>
+              <div class="admin-user-list" id="registeredUsersList"></div>
+            </section>
+
+            <section class="admin-insight-card">
+              <h3 class="admin-insight-title">Top Products</h3>
+              <div class="admin-stat-stack">
+                <div class="admin-stat-box" id="mostBoughtProductCard"></div>
+                <div class="admin-stat-box" id="leastBoughtProductCard"></div>
+              </div>
+            </section>
+
+            <section class="admin-insight-card">
+              <h3 class="admin-insight-title">Special Requests</h3>
+              <div class="admin-request-list" id="specialRequestsList"></div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="../api-client.js"></script>
+  <script src="../security-utils.js"></script>
+  <script src="../notification-manager.js"></script>
+  <script src="../theme-manager.js"></script>
+  <script src="auth.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>
